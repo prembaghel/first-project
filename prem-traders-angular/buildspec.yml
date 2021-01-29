@@ -18,12 +18,12 @@ phases:
     - npm install
   build:
     commands:
-        - echo Build started 
+        - echo Build started ..
         - ng build --prod
         - ls -l -F
   post_build:
     commands:
-            # Clear S3 bucket.
+            # Clear S3 bucket..
             - aws s3 rm s3://prem.traders.angular --recursive
             - echo S3 bucket is cleared.
             - aws s3 cp dist/prem.traders.angular s3://prem.traders.angular --recursive
